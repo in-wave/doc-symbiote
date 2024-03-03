@@ -49,7 +49,7 @@ Named context is an external abstract data source that can be used by it's name.
 
 Let's see how it works. In this example, we use named context as a simple localization tool:
 ```js
-import Symbiote, { html, PubSub } from '@symbiotejs/symbiote';
+import Symbiote, { html, PubSub } from '@in-wave/symbiote';
 
 // Create localization map for the English language:
 let EN = {
