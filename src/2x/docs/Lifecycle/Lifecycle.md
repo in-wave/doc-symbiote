@@ -15,7 +15,7 @@ Symbiote-component - is an extension of a native Custom Element, so it has all r
 
 `renderCallback()` - is a most regular and convenient place to describe component's logic:
 ```javascript
-class MyComponent extends BaseComponent {
+class MyComponent extends Symbiote {
  
   renderCallback() {
     // You have an access to data and to the all DOM API methods here
@@ -27,7 +27,7 @@ class MyComponent extends BaseComponent {
 
 If you DO NOT planning to permanently remove your component from DOM and destroy it - set `readyToDestroy` property:
 ```javascript
-class MyComponent extends BaseComponent {
+class MyComponent extends Symbiote {
 
   readyToDestroy = false;
   
