@@ -6,7 +6,7 @@ The core template mechanic in Symbiote.js - is a native browser HTML-string pars
 
 We have a `html` helper tag function, that manage to construct templates using compact binding-maps:
 ```js
-import { html } from '@symbiotejs/symbiote';
+import { html } from '@in-wave/symbiote';
 
 const myTemplate = html`
   <button ${{onclick: 'onBtnClick'}}>Click me!</button>
@@ -23,7 +23,7 @@ that describes connections between the own inner element properties and the comp
 
 Let's see onto the more detailed example:
 ```js
-import Symbiote, { html } from '@symbiotejs/symbiote';
+import Symbiote, { html } from '@in-wave/symbiote';
 
 class MyComponent extends Symbiote {
 
