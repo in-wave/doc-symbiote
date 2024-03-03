@@ -2,7 +2,7 @@
 
 `PubSub` - is a main Symbiote.js entity to manipulate application data. It implements simple and well known [Publication-subscribe]() pattern and represents all you need to organize data-flow inside your components and outside of them. It is integrated to the `Symbiote` base class, but also can be used separately:
 ```js
-import { PubSub } from '@symbiotejs/symbiote';
+import { PubSub } from '@in-wave/symbiote';
 
 let myDataCtx = PubSub.registerCtx({
   myProp: 'some value',
