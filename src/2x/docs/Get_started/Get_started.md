@@ -3,21 +3,21 @@
 ### NPM installation
 
 ```shell
-npm i @symbiotejs/symbiote
+npm i @in-wave/symbiote
 ```
 
 > Note, that if you are using CDN module sharing approach, you should add package to a `devDependencies` section, because it will be used for the code static analysis only (TypeScript and "Go to Definition" support).
 
 Installation as a `dev` dependency:
 ```shell
-npm install @symbiotejs/symbiote --save-dev
+npm install @in-wave/symbiote --save-dev
 ```
 
 ### HTTPS/CDN
 
 To easily share Symbiote.js as a common dependency between independent application parts (widgets, micro-frontends, meta-applications), you can use one of the modern code CDNs:
 ```js
-import { Symbiote } from 'https://esm.run/@symbiotejs/symbiote';
+import { Symbiote } from 'https://esm.run/@in-wave/symbiote';
 ```
 
 TypeScript support (my-types.d.ts):
@@ -25,8 +25,8 @@ TypeScript support (my-types.d.ts):
 // List out all your dependencies. 
 // For every URL, you must map it to its local module:
 
-declare module 'https://esm.run/@symbiotejs/symbiote' {
-  export * from '@symbiotejs/symbiote';
+declare module 'https://esm.run/@in-wave/symbiote' {
+  export * from '@in-wave/symbiote';
 }
 ```
 In some cases, you will need to add `maxNodeModuleJsDepth` setting to your `tsconfig.json` file:
@@ -44,7 +44,7 @@ Also, you can publish your own Symbiote.js build as a regular static file to you
 It's convenient to define the common base class for your application to have ability to manage HTTPS dependency in one place and to have an endpoint for any app-level extensions:
 
 ```js
-import { Symbiote } from 'https://esm.run/@symbiotejs/symbiote';
+import { Symbiote } from 'https://esm.run/@in-wave/symbiote';
 
 export class AppComponent extends Symbiote {
   // Your code...
@@ -56,7 +56,7 @@ export class AppComponent extends Symbiote {
 Initial submodule connection:
 
 ```shell
-git submodule add -b main https://github.com/symbiotejs/symbiote.js.git ./symbiote
+git submodule add -b wave https://github.com/in-wave/symbiote.js.git ./symbiote
 ```
 
 Activation at the cloned host repository and getting updates: 
@@ -94,13 +94,13 @@ Create the HTML file `my-app.html`:
 <script type="importmap">
   {
     "imports": {
-      "@symbiotejs/symbiote": "https://esm.run/@symbiotejs/symbiote"
+      "@in-wave/symbiote": "https://in-wave.com/symbiote"
     }
   }
 </script>
 
 <script type="module">
-  import Symbiote, { html, css } from '@symbiotejs/symbiote';
+  import Symbiote, { html, css } from '@in-wave/symbiote';
 
   export class MyComponent extends Symbiote {
 
