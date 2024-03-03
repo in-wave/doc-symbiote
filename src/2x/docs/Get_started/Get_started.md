@@ -56,7 +56,7 @@ export class AppComponent extends Symbiote {
 Initial submodule connection:
 
 ```shell
-git submodule add -b wave https://github.com/in-wave/symbiote.js.git ./symbiote
+git submodule add -b wave https://github.com/in-wave/symbiote.git ./symbiote
 ```
 
 Activation at the cloned host repository and getting updates: 
