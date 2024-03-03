@@ -5,7 +5,7 @@ Symbiote.js has a built-in solution for the SPA routing based on standard [Histo
 Let's create the simple application example, to see how it works:
 
 ```js
-import Symbiote, { html, AppRouter } from '@symbiotejs/symbiote';
+import Symbiote, { html, AppRouter } from '@in-wave/symbiote';
 
 // Describe your application routing map:
 let routingMap = {
