@@ -14,13 +14,13 @@ Every Symbiote-component has a two major interfaces to set styles:
 
 Also, th Symbiote package provides an `css` utility function, to process CSS form the template literals:
 ```js
-import { css } from '@symbiotejs/symbiote';
+import { css } from '@in-wave/symbiote';
 ```
 
 With `css` you can provide some additional CSS-processing:
 
 ```js
-import { css } from '@symbiotejs/symbiote';
+import { css } from '@in-wave/symbiote';
 
 // This processing function will be called only once:
 css.useProcessor((cssText) => {
