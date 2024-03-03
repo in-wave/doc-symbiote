@@ -27,14 +27,6 @@ export default function(base = './', script = '') {
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./2x/css/index.css">
     ${script ? script : ''}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RZEGMKNNR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2RZEGMKNNR');
-    </script>
   </head>
   `;
 };
