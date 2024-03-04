@@ -39,26 +39,6 @@ ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
     <card-el>Biome</card-el>
   </a>
 
-  <a href="https://chat.openai.com/g/g-7GbkxAPqG-symbiote-ai"  target="_blank">
-    <card-el double clr-5>Symbiote AI  →</card-el>
-  </a>
-
-  <a href="#community">
-    <card-el>Community</card-el>
-  </a>
-
-  <a href="#sponsorship">
-    <card-el double clr-3>Sponsorship</card-el>
-  </a>
-
-  <a href="#solution">
-    <card-el triple>Request solution</card-el>
-  </a>
-
-  <a href="./1x/" target="_blank">
-    <card-el>Go to 1.x →</card-el>
-  </a>
-
   <a href="https://github.com/in-wave/symbiote" target="_blank">
     <card-el clr-2>GitHub →</card-el>
   </a>

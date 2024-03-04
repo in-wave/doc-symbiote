@@ -65,19 +65,4 @@ export default /*html*/ `
   ${closeBtn}
   <section-inner>${await md('../src/2x/md/biome.md.js')}</section-inner>
 </section>
-
-<section id="community">
-  ${closeBtn}
-  <section-inner>${await md('../src/2x/md/community.md.js')}</section-inner>
-</section>
-
-<section id="sponsorship">
-  ${closeBtn}
-  <section-inner clr-3>${await md('../src/2x/md/sponsorship.md.js')}</section-inner>
-</section>
-
-<section id="solution">
-  ${closeBtn}
-  <section-inner>${await md('../src/2x/md/solution.md.js')}</section-inner>
-</section>
 `;
