@@ -1,7 +1,7 @@
 import logo from '../../svg/logo/index.svg.js';
 
 let items = [
-  'get started',
+  'start',
   'templates',
   'properties',
   'context',

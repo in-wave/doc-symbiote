@@ -47,7 +47,7 @@ MyComponent.template = html`
   ...item template
 </div>`;
 ```
-> More details about data context types, you can find in the [**Context** section](./2x/docs/Context/).
+> More details about data context types, you can find in the [**Context** section](./2x/docs/context/).
 
 Computed list example: 
 ```js
@@ -75,7 +75,7 @@ MyComponent.template = html`
 `;
 ```
 
-> More details about computed properties you can find [here](./2x/docs/Properties/).
+> More details about computed properties you can find [here](./2x/docs/properties/).
 
 ### List items
 

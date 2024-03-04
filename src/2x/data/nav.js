@@ -34,7 +34,7 @@ export const DOCS = [
   {
     menuItem: 'Templates',
     title: 'Symbiote.js | Templates',
-    link: './2x/docs/Templates.html',
+    link: './2x/docs/templates.html',
   },
   {
     menuItem: 'External templates',
@@ -44,27 +44,27 @@ export const DOCS = [
   {
     menuItem: 'List rendering',
     title: 'Symbiote.js | List rendering',
-    link: './2x/docs/List_rendering.html',
+    link: './2x/docs/list_rendering.html',
   },
   {
     menuItem: 'Lifecycle',
     title: 'Symbiote.js | Lifecycle',
-    link: './2x/docs/Lifecycle.html',
+    link: './2x/docs/lifecycle.html',
   },
   {
     menuItem: 'Data context',
     title: 'Symbiote.js | Data context',
-    link: './2x/docs/Component_data_context.html',
+    link: './2x/docs/component_data_context.html',
   },
   {
     menuItem: 'Attributes',
     title: 'Symbiote.js | Attributes',
-    link: './2x/docs/Attribute_binding.html',
+    link: './2x/docs/attribute_binding.html',
   },
   {
     menuItem: 'Styling',
     title: 'Symbiote.js | Styling',
-    link: './2x/docs/Styling.html',
+    link: './2x/docs/styling.html',
   },
   {
     menuItem: 'Data',
@@ -79,17 +79,17 @@ export const DOCS = [
   {
     menuItem: 'Control capture',
     title: 'Symbiote.js | Control capture',
-    link: './2x/docs/Control_capture.html',
+    link: './2x/docs/control_capture.html',
   },
   {
     menuItem: 'Progressive complexity',
     title: 'Symbiote.js | Progressive complexity',
-    link: './2x/docs/Progressive_complexity.html',
+    link: './2x/docs/progressive_complexity.html',
   },
   {
     menuItem: 'CSS context properties',
     title: 'Symbiote.js | CSS context properties',
-    link: './2x/docs/CSS-context-properties.html',
+    link: './2x/docs/cSS-context-properties.html',
   },
   {
     menuItem: 'Extending',
@@ -104,6 +104,6 @@ export const DOCS = [
   {
     menuItem: 'TypeScript',
     title: 'Symbiote.js | TypeScript',
-    link: './2x/docs/TypeScript.html',
+    link: './2x/docs/typeScript.html',
   },
 ];
