@@ -113,7 +113,7 @@ To initiate some property from the CSS Data, you can do as follows:
 html`<div ${{textContent: '--prop-name'}}> ... </div>`;
 ```
 
-> More details about Symbiote-component's context you can find in [**Context**](./2x/docs/Context/) section.
+> More details about Symbiote-component's context you can find in [**Context**](./docs/Context/) section.
 
 ## Slots
 
@@ -199,7 +199,7 @@ MyComponent.template = html`
 `;
 ```
 
-> More information about `itemize` API you can find at the [**List items** section](./2x/docs/List_items/).
+> More information about `itemize` API you can find at the [**List items** section](./docs/List_items/).
 
 ## External customizable templates
 

@@ -99,7 +99,7 @@ class MyComponent extends Symbiote {
 }
 ``` 
 
-More information about `PubSub` interface, you can find in the [corresponding section](./2x/docs/PubSub/).
+More information about `PubSub` interface, you can find in the [corresponding section](./docs/PubSub/).
 
 ### Inherited context
 

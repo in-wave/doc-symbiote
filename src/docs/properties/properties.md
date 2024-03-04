@@ -145,6 +145,6 @@ Symbiote-component is able to interact with different types of properties, not w
 - `--` - allows to initiate property with the value recieved from CSS variable values
 - `@` - allows to initiate the state property and bind it to the attribute value
 
-> More details about context types and the related tokens you can find in the [Context](./2x/docs/Context/) section.
+> More details about context types and the related tokens you can find in the [Context](./docs/Context/) section.
 
 

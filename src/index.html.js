@@ -19,7 +19,7 @@ ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
     </card-el>
   </a>
 
-  <a href="./2x/doc/start/">
+  <a href="./docs/start/">
     <card-el clr-2>Docs</card-el>
   </a>
 

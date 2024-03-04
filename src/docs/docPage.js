@@ -1,5 +1,5 @@
-import head from '../tpl/head.htm.js';
-import { md2html } from '../../../lib/index.js';
+import head from '../2x/tpl/head.htm.js';
+import { md2html } from '../../lib/index.js';
 import menu from './menu.js';
 
 /**
@@ -12,7 +12,7 @@ export async function docPage(mdTxt, menuItem) {
   return /*html*/ `
     <!DOCTYPE html>
     <html lang="en">
-    ${head('../../../')}
+    ${head('../../')}
     <body style="display:block">
       <layout-el>
         ${menu(menuItem)}
