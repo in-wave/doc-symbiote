@@ -1,4 +1,4 @@
-let uploaderCssSrc = './2x/css/uploader/index.css';
+let uploaderCssSrc = './~/css/uploader/index.css';
 
 let spinnerHtml = /*html*/ `<ims-photo-spinner></ims-photo-spinner>`;
 

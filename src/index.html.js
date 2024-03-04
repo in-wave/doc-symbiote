@@ -1,10 +1,10 @@
-import head from './2x/tpl/head.htm.js';
-import sections from './2x/home/sections.js';
+import head from './~/tpl/head.htm.js';
+import sections from './~/home/sections.js';
 
 export default /*html*/ `
 <!DOCTYPE html>
 <html lang="en">
-${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
+${head(undefined, '<script src="./~/js/index.js" type="module"></script>')}
 <body>
   <card-el clr-1 logo>
     <img src="./svg/logo/index.svg" alt="Symbiote.js logo">

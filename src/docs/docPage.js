@@ -1,4 +1,4 @@
-import head from '../2x/tpl/head.htm.js';
+import head from '../~/tpl/head.htm.js';
 import { md2html } from '../../lib/index.js';
 import menu from './menu.js';
 

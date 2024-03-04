@@ -25,7 +25,7 @@ export default function(base = './', script = '') {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./2x/css/index.css">
+    <link rel="stylesheet" href="./~/css/index.css">
     ${script ? script : ''}
   </head>
   `;
