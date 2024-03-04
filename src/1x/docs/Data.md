@@ -9,7 +9,7 @@
 
 Creating `Data` instance:
 ```javascript
-import { Data } from '@symbiotejs/symbiote';
+import { Data } from '@in-wave/symbiote';
 
 const data = new Data();
 ```
@@ -69,7 +69,7 @@ Data.clearNamedCtx('MY_CTX_NAME');
 Symbiote.js `BaseComponent` class provides an interface for the combined data context with the `Data` instances under the hood:
 
 ```javascript
-import { BaseComponent } from '@symbiotejs/symbiote';
+import { BaseComponent } from '@in-wave/symbiote';
 
 class MyComponent extends BaseComponent {
   initCallback() {

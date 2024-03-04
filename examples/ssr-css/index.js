@@ -1,4 +1,4 @@
-import Symbiote from '@symbiotejs/symbiote';
+import Symbiote from '@in-wave/symbiote';
 
 class MyCom extends Symbiote {
   processInnerHtml = true;

@@ -9,7 +9,7 @@ import { html as htm } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
 import { dracula } from 'thememirror';
 
-const symUrl = 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote/core/index.js/+esm';
+const symUrl = 'https://cdn.jsdelivr.net/npm/@in-wave/symbiote/core/index.js/+esm';
 
 const langExtensions = {js: javascript, htm, css};
 const defaultResultUrl = URL.createObjectURL(new Blob([
@@ -82,7 +82,7 @@ export class LiveCode extends Symbiote {
         type: 'text/javascript',
       });
       let jsUrl = URL.createObjectURL(jsBlob);
-      let importMap = `<script type="importmap">{"imports":{"@symbiotejs/symbiote":"${symUrl}"}}</script>`;
+      let importMap = `<script type="importmap">{"imports":{"@in-wave/symbiote":"${symUrl}"}}</script>`;
       htmlDoc = importMap + /*html*/ `<script src="${jsUrl}" type="module"></script>` + htmlDoc;
 
       this.$.resultUrl = URL.createObjectURL(new Blob([htmlDoc], {

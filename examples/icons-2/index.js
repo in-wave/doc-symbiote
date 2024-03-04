@@ -1,4 +1,4 @@
-import Symbiote, { html } from '@symbiotejs/symbiote';
+import Symbiote, { html } from '@in-wave/symbiote';
 
 // App Icons (SVG path map):
 const ICONS = {

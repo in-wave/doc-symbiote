@@ -55,7 +55,7 @@ build workflows to share the dependencies anymore.
 
 Example:
 \`\`\`js
-import { Symbiote, html, css } from 'https://esm.run/@symbiotejs/symbiote';
+import { Symbiote, html, css } from 'https://esm.run/@in-wave/symbiote';
 
 export class MyAppComponent extends Symbiote {}
 

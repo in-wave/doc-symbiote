@@ -1,4 +1,4 @@
-import Symbiote, { applyStyles } from '@symbiotejs/symbiote';
+import Symbiote, { applyStyles } from '@in-wave/symbiote';
 
 const styles = {
   host: {

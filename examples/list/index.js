@@ -1,4 +1,4 @@
-import Symbiote, { html } from '@symbiotejs/symbiote';
+import Symbiote, { html } from '@in-wave/symbiote';
 
 // Item element:
 class ListItem extends Symbiote {

@@ -1,6 +1,6 @@
 export const js2 = /*md*/ `
 This code defines a class \`MyApp\` which extends BaseComponent from the 
-\`@symbiotejs/symbiote\` module.
+\`@in-wave/symbiote\` module.
 
 The class has an \`init$\` object that sets initial values for four properties:
 

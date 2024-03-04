@@ -31,7 +31,7 @@ So, any nested component has a data-channel name provided, which can be accessed
 
 You can create your own CSS context properties with the following simple approach:
 ```javascript
-import { BaseComponent } from '@symbiotejs/symbiote';
+import { BaseComponent } from '@in-wave/symbiote';
 
 class MyComponent extends BaseComponent {
 
@@ -97,7 +97,7 @@ Then you can read those flags in your application.
 
 In the following example, you can see the CSS context property binding to the elements attribute and the type casting (to `Boolean`) for it:
 ```js
-import { BaseComponent } from '@symbiotejs/symbiote';
+import { BaseComponent } from '@in-wave/symbiote';
 
 class MyComponent extends BaseComponent {
 

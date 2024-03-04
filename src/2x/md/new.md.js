@@ -5,7 +5,7 @@ export default /*md*/ `
 
 We have a \`html\` tag function, which helps to construct HTML templates:
 \`\`\`js
-import { html } from '@symbiotejs/symbiote';
+import { html } from '@in-wave/symbiote';
 
 let mySymbioteTemplate = html\`<div>Hello world!</div>\`;
 \`\`\`
@@ -35,7 +35,7 @@ properties (including any nested property) to our data models.
 **Symbiote.js** now support the new, cutting edge, browser styling technology - **[adoptedStyleSheets](https://developer.mozilla.org/en-US/docs/Web/API/Document/adoptedStyleSheets)**.
 It helps to style your web-components as easy and flexible like never before:
 \`\`\`js
-import { css } from '@symbiotejs/symbiote';
+import { css } from '@in-wave/symbiote';
 
 // External component styles are set in higher level CSS root (document or shadow):
 MyComponent.rootStyles = css\`
@@ -270,8 +270,8 @@ Light DOM slots support is removed from the default template processing pipeline
 you need to use slots without Shadow DOM, you need to connect \`slotProcessor\` manually:
 
 \`\`\`js
-import Symbiote from '@symbiotejs/symbiote';
-import { slotProcessor } from '@symbiotejs/symbiote/core/slotProcessor.js';
+import Symbiote from '@in-wave/symbiote';
+import { slotProcessor } from '@in-wave/symbiote/core/slotProcessor.js';
 
 class MyComponent extends Symbiote {
   constructor() {
@@ -291,7 +291,7 @@ For the most cases, when slots are necessary, use components with a Shadow DOM m
 Symbiote.js is very easy to use with SSR:
 
 \`\`\`js
-import Symbiote from '@symbiotejs/symbiote';
+import Symbiote from '@in-wave/symbiote';
 
 class MyComponent extends Symbiote {
   ssrMode = true;

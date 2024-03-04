@@ -1,6 +1,6 @@
 export const js2 = /*md*/ `
 This code example demonstrates how to create a custom web component using 
-Symbiote.js. The code imports the \`BaseComponent\` class from the \`'@symbiotejs/symbiote'\` 
+Symbiote.js. The code imports the \`BaseComponent\` class from the \`'@in-wave/symbiote'\` 
 module.
 
 The \`MyComponent\` class extends the \`BaseComponent\` class and defines an \`init$\` 

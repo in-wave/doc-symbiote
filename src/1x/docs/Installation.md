@@ -6,14 +6,14 @@
 # Installation
 ## NPM
 
-`npm i @symbiotejs/symbiote`
+`npm i @in-wave/symbiote`
 
 ## Alternatives
 
 ### CDN
 
 ```js
-import { BaseComponent } from 'https://esm.sh/@symbiotejs/symbiote/';
+import { BaseComponent } from 'https://esm.sh/@in-wave/symbiote/';
 ```
 
 TypeScript support (my-types.d.ts):
@@ -22,8 +22,8 @@ TypeScript support (my-types.d.ts):
 declare module 'https://*';
 
 // Second, list out all your dependencies. For every URL, you must map it to its local module.
-declare module 'https://esm.sh/@symbiotejs/symbiote/' {
-  export * from '@symbiotejs/symbiote';
+declare module 'https://esm.sh/@in-wave/symbiote/' {
+  export * from '@in-wave/symbiote';
 }
 ```
 

@@ -8,7 +8,7 @@
 Symbiote-component is able to take control on it's direct DOM children, even they are not a part of component's template. That is very powerful mechanics, which is helpful to implement things like SSR and many of others. Let's clarify how it works.
 
 ```javascript
-import {BaseComponent} from '@symbiotejs/symbiote';
+import {BaseComponent} from '@in-wave/symbiote';
 
 class ControlCapture extends BaseComponent {
 
@@ -51,7 +51,7 @@ To avoid "blinking" effect and unnecessary redraws, when you using the text node
 
 In your component code:
 ```javascript
-import {BaseComponent} from '@symbiotejs/symbiote';
+import {BaseComponent} from '@in-wave/symbiote';
 
 class ControlCapture extends BaseComponent {
 
@@ -73,7 +73,7 @@ ControlCapture.reg('control-capture');
 
 It's possible to combine control capture approach with the Shadow DOM features:
 ```javascript
-import {BaseComponent} from '@symbiotejs/symbiote';
+import {BaseComponent} from '@in-wave/symbiote';
 
 class ControlCapture extends BaseComponent {
 
