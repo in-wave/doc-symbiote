@@ -1,4 +1,4 @@
-import codeCss from '../../1x/css/code.css.js';
+import codeCss from './code.css';
 
 function rndRadius() {
   return 30 + Math.round(Math.random() * 50) + 'px';

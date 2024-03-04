@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <base href="./">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbiote.js</title>
+    <meta name="description" content="Symbiote.js - ultralight and ultra-powerful library to create widgets, organize micro-frontends, build reusable embeddable components and libraries.">
+    <meta name="keywords" content="Symbiote.js, web-components, javascript framework, javascript library, application state management, custom elements, micro frontends, widget development, DOM API, js, js documentation"/>
+    <meta property="og:description" content="Symbiote.js - ultralight and ultra-powerful library to create widgets, organize micro-frontends, build reusable embeddable components and libraries.">
+    <meta property="og:title" content="Symbiote.js">
+    <meta name="twitter:title" content="Symbiote.js">
+    <link rel="icon" href="data:image/svg+xml;base64,CiAgPHN2ZwogICAgIHdpZHRoPSI3MiIKICAgICBoZWlnaHQ9IjcyIgogICAgIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiCiAgICAgdmVyc2lvbj0iMS4xIgogICAgIGlkPSJzdmc1IgogICAgIHhtbDpzcGFjZT0icHJlc2VydmUiCiAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzCiAgICAgICBpZD0iZGVmczIiIC8+PGcKICAgICAgIGlkPSJsYXllcjIiPjxnCiAgICAgICAgIGlkPSJnMTI4MTgiCiAgICAgICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuNTkwNDUzNywwLDAsMS41OTA0NTM3LC0yODkuMTg4NzgsLTI3NC4zODczNikiPjxnCiAgICAgICAgICAgaWQ9ImcxMjAzMSI+PHBhdGgKICAgICAgICAgICAgIGlkPSJwYXRoMTA5MjciCiAgICAgICAgICAgICBzdHlsZT0iZmlsbDojYzdkZDQ0O2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW9wYWNpdHk6MSIKICAgICAgICAgICAgIGQ9Im0gNDcxLjM1ODksMjQ4LjMzNjMzIGMgLTYyLjY5OTIyLDEuMDY4MzMgLTExOS4yODM2NCwyMS4zNDkgLTE0NC44NTkzNyw4MS42MTcxOCAtNy41NTE4MywxOC41OTU1NiAtMTEuMTQ5ODksMzkuMzIwOTIgLTEyLjE0NDUzLDYxLjQ0NzI3IDUuMzQ4OSw3Ny4zOTIyIDQxLjkyNDYyLDExMS4yNjAwNiA3OS42MjUsMTI3LjQxNDA2IDI5LjM1ODU4LDEyLjU0Njc1IDYzLjE0Mzg5LDExLjg0MTY4IDkxLjc3NzM0LDE0Ljc4NzExIEwgNDg0Ljk4LDQzOC42NzYxNyBjIC0xNy4xMTUxMSwtMS4zNTExOSAtMzMuNjIyOSwtMy40NDA0MSAtNDcuMjk0OTMsLTExLjE2MjExIC0xNi44ODg0NiwtOS44NTQ2OCAtMjMuMzk0NDEsLTI0LjA2MzU2IC0yNC4yNjI1MywtNDAuMzc1NzYgMS4wMzMyNywtMTkuMDA5MzYgOS44NTY5NCwtMzQuNzkxNDQgMjkuMDY3MjIsLTQyLjIzMzYxIDguNzk2NzgsLTYuODY0MSA0OS44MjQxNCwtMS44MTMwOCAzNi43ODcxMSwtMy45MTAxNiB2IC05Mi42MDM1MiB6IiAvPjxwYXRoCiAgICAgICAgICAgICBpZD0icGF0aDEwODk5IgogICAgICAgICAgICAgc3R5bGU9ImZpbGw6Izc1ODNhYTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MXB4O3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgICAgICAgICBkPSJtIDQ4NC45OCw0MzguNjc2MTcgLTMxLjM2NDI1LDIwLjMzMTMxIDI4LjY2ODY5LDI0LjM5MTUxIC0zMC43MTUwMSwyMS43NTI3OCAyMy4yNjU3NSwyNy41NzY0MSBjIDExLjA0MDExLDEuMTM1NjYgMzIuMzAzMTcsMy42NDU5NCA0MS4yMzA3NSw2Ljg1NjE5IDM1LjQ2MDQ3LDEzLjgyNTczIDQwLjI1MzUxLDUwLjU0NDU2IDI4LjkyNTc4LDc4LjUyNzM1IC0yMC4yNjY5MywzNy41MDc4NSAtNjUuMTg1NTgsNDAuNDkxMTYgLTEwMi4xNDQ3LDI5Ljc1MDUxIC0yNS44MjIyMiwtNy44MjMyMiAtNDAuMjI4NjYsLTI1Ljg1NTEzIC01NS4yNzkyOSwtMzguNjQwNjIgLTIzLjIyMjU1LC0yMS45Nzc2MSAtNDUuNjA0MTUsLTE2LjMyNDI3IC02My42OTcxLC0xLjg0NjIyIC0xNC4yMjcxNCwxMS44Mzc1OCAtMTYuNzk3OTEsMzQuMjM5MjYgLTQuMzY3MTksNjEuMTg1NTQgMzMuNTM1MjMsNTAuOTAzNTkgODQuNzQ2MzcsNzMuODU2NTIgMTM5LjEzMjc4LDc4LjQwMjQ1IDUwLjAyMTA1LDMuODIyMSAxMDUuMDc4ODUsLTcuNDA3NzEgMTQzLjk3ODU1LC00OC40MDE3MSA1MS44MTg3OCwtNTcuMTM4OTUgNTEuNzc1MTgsLTEzOS42NDc5MyAxOC44Mzk4NSwtMTk0LjE2ODcgLTM1LjI4MjYsLTQ2Ljk3OCAtNzcuMjc5NDEsLTY1LjEwMDQxIC0xMzYuNDc0NjEsLTY1LjcxNjggeiIgLz48cGF0aAogICAgICAgICAgICAgaWQ9InBhdGg5NTQwIgogICAgICAgICAgICAgc3R5bGU9ImZpbGw6IzAwYWJhOTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MXB4O3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgICAgICAgICBkPSJtIDQ3OS4yNzY4NywyNDguMzkxMDEgdiA5Mi42MDM1MiBjIDYuODYwODgsMS4wOTE5IDEzLjU5NjA3LDMuMDA1NjcgMjAuNDQ1MzEsNS4yMzI0MiA1MS4xNDYxNSwyMC41MDIwOCA3Ny41NjI3NywyMy45ODQ2MyAxMTIuODY2OTksMTAuNzQ1MjkgNDYuNzQwNDIsLTE3LjI0MDQyIDcxLjM0NTA1LC02OS45NjUxNSA3NS44ODg4NywtMTA3LjE1NTQ1IHoiIC8+PGNpcmNsZQogICAgICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6OS44NzU3MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQiCiAgICAgICAgICAgICBpZD0icGF0aDEwODk1IgogICAgICAgICAgICAgY3g9IjU0My45MDE2MSIKICAgICAgICAgICAgIGN5PSIzMDUuMzA2NzkiCiAgICAgICAgICAgICByPSI0MC44Mjk5MjIiIC8+PGVsbGlwc2UKICAgICAgICAgICAgIHN0eWxlPSJmaWxsOiMwMDAwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjQuNDQ1NzU7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kIgogICAgICAgICAgICAgaWQ9ImNpcmNsZTEwODk3IgogICAgICAgICAgICAgY3g9IjU0My45MDE2MSIKICAgICAgICAgICAgIGN5PSIzMDUuMzA2NzkiCiAgICAgICAgICAgICByeD0iMTguMjMwMzMzIgogICAgICAgICAgICAgcnk9IjE4LjUzMTY2MiIgLz48L2c+PC9nPjwvZz48L3N2Zz4KICAKICA=">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./2x/css/index.css">
+    <script src="./2x/js/index.js" type="module"></script>
+  </head>
+  
+<body>
+  <card-el clr-1 logo>
+    <img src="./svg/logo/index.svg" alt="Symbiote.js">
+  </card-el>
+
+  <a href="#new">
+    <card-el triple>
+      <div>
+        <h2>Symbiote.js 2.2 is out now!</h2>
+        <h3>What's new?</h3>
+      </div>
+    </card-el>
+  </a>
+
+  <a href="./2x/docs/Get_started/">
+    <card-el clr-2>Docs</card-el>
+  </a>
+
+  <a href="#philosophy">
+    <card-el clr-5>Philosophy</card-el>
+  </a>
+  
+  <a href="#live">
+    <card-el double clr-2>Live example</card-el>
+  </a>
+  
+  <a href="#playground">
+    <card-el clr-4>Playground</card-el>
+  </a>
+
+  <a href="#biome">
+    <card-el>Biome</card-el>
+  </a>
+
+  <a href="https://github.com/in-wave/symbiote" target="_blank">
+    <card-el clr-2>GitHub →</card-el>
+  </a>
+
+  
+<section id="new">
+  <div close-panel><a href="#home" close>Close [x]</a></div>
+  <section-inner><h2 id="whats-new">What&#39;s new?</h2>
+<h3 id="1-new-template-helper-function">1. New template helper function</h3>
+<p>We have a <code>html</code> tag function, which helps to construct HTML templates:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { html } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@in-wave/symbiote&#x27;</span>;
+
+<span class="hljs-keyword">let</span> mySymbioteTemplate = html`<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Hello world!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>`</span>;
+</code></pre>
+<p>More detailed template syntax example:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{heading}}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> ${{<span class="hljs-attr">onclick:</span> &#x27;<span class="hljs-attr">onButtonClicked</span>&#x27;}}&gt;</span>Click me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> ${{
+  <span class="hljs-attr">textContent:</span> &#x27;<span class="hljs-attr">someText</span>&#x27;,
+  &#x27;<span class="hljs-attr">style.border</span>&#x27;<span class="hljs-attr">:</span> &#x27;<span class="hljs-attr">myComponentBorder</span>&#x27;,
+  &#x27;$<span class="hljs-attr">.data</span>&#x27;<span class="hljs-attr">:</span> &#x27;<span class="hljs-attr">someData</span>&#x27;,
+}}&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> ${{<span class="hljs-attr">list:</span> &#x27;<span class="hljs-attr">myListData</span>&#x27;}}&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>{{listItemName}}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>Now we can use native JavaScript string interpolation and simple objects to map element&#39;s attributes, 
+properties (including any nested property) to our data models.</p>
+</blockquote>
+<h3 id="2-new-styling-approach-and-capabilities">2. New styling approach and capabilities</h3>
+<p><strong>Symbiote.js</strong> now support the new, cutting edge, browser styling technology - <strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/adoptedStyleSheets">adoptedStyleSheets</a></strong>.
+It helps to style your web-components as easy and flexible like never before:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { css } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@in-wave/symbiote&#x27;</span>;
+
+<span class="hljs-comment">// External component styles are set in higher level CSS root (document or shadow):</span>
+<span class="hljs-title class_">MyComponent</span>.<span class="hljs-property">rootStyles</span> = css`<span class="language-css">
+  my-component {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid currentColor;
+  }
+`</span>;
+
+<span class="hljs-comment">// Styles for component&#x27;s Shadow DOM (optional):</span>
+<span class="hljs-title class_">MyComponent</span>.<span class="hljs-property">shadowStyles</span> = css`<span class="language-css">
+  <span class="hljs-selector-pseudo">:host</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#f00</span>;
+  }
+`</span>;
+</code></pre>
+<p><strong>rootStyles</strong> and <strong>shadowStyles</strong> could be used separately and together as well. 
+Or you can use any other styling approach you familiar with. </p>
+<blockquote>
+<p>Important notice: <strong>adoptedStyleSheets</strong> interface does not conflict with <strong><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">CSP</a></strong> (Content Security Policy) in common,
+so its safe to use CSS definitions in JavaScript directly.</p>
+</blockquote>
+<h3 id="3-new-lifecycle-method-rendercallback">3. New lifecycle method <code>renderCallback</code></h3>
+<p>If you need to interact with some DOM elements, created by Symbiote component, you need a 
+reliable way to know when those elements are ready. In case of postponed rendering defined in some parent class, that 
+was a messy thing sometimes. Now we have a simple dedicated <strong>renderCallback</strong> lifecycle method for that.</p>
+<h3 id="4-upper-level-properties-">4. Upper level properties <code>^</code></h3>
+<p>One of the unique features of Symbiote.js is ability to lay on DOM structure for component 
+behavior definition. </p>
+<p>Now we can bind our handlers and properties to upper component&#39;s state directly 
+and use cascade data model in your application:</p>
+<pre><code class="language-js"><span class="hljs-title class_">MyComponent</span>.<span class="hljs-property">template</span> = html`<span class="language-xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> </span></span><span class="hljs-subst">${{onclick: <span class="hljs-string">&#x27;^upperLevelClickHandler&#x27;</span>}}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>Click me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+`</span>;
+</code></pre>
+<p>This example will find the first upper-level component&#39;s state, where &quot;upperLevelClickHandler&quot; is defined.</p>
+<p>It helps to significantly simplify a lot of complicated interaction cases and to write less code.</p>
+<blockquote>
+<p>Summary: use the <code>^</code> property token to get access to upper level properties.</p>
+</blockquote>
+<h3 id="5-computed-properties-">5. Computed properties <code>+</code></h3>
+<p>In Symbiote.js 2.x you can define computed properties which are calculated<br>on any other local property change:</p>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {
+
+  init$ = {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">b</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&#x27;+sum&#x27;</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">$</span>.<span class="hljs-property">a</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">$</span>.<span class="hljs-property">b</span>;
+  }
+
+}
+
+<span class="hljs-title class_">MyComponent</span>.<span class="hljs-property">template</span> = html`<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{+sum}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>`</span>;
+</code></pre>
+<p>Property calculation flow is optimized and won&#39;t be invoked while all other changes made in synchronous cycle will not be complete.</p>
+<blockquote>
+<p>Summary: use the <code>+</code> property prefix to define computed properties.</p>
+</blockquote>
+<h3 id="6-css-data-initiation-token---">6. CSS Data initiation token <code>--</code></h3>
+<p>Now you can use special property tokens to initiate component data with a values<br>defined as CSS Custom Property:</p>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TestApp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {}
+
+<span class="hljs-title class_">TestApp</span>.<span class="hljs-property">rootStyles</span> = css`<span class="language-css">
+  test-app {
+    <span class="hljs-attr">--header</span>: <span class="hljs-string">&#x27;CSS Data&#x27;</span>;
+    <span class="hljs-attr">--text</span>: <span class="hljs-string">&#x27;Hello!&#x27;</span>;
+  }
+`</span>;
+
+<span class="hljs-title class_">TestApp</span>.<span class="hljs-property">template</span> = html`<span class="language-xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{--header}}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{--text}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+`</span>;
+</code></pre>
+<p>This feature helps to create and provide configurations for the components.</p>
+<h3 id="7-virtual-components">7. Virtual components</h3>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {
+
+  isVirtual = <span class="hljs-literal">true</span>;
+
+}
+</code></pre>
+<p>When <strong>isVirtual</strong> flag is enabled, your component will be rendered as a part of DOM
+without any wrapping Custom Element in structure. In this case, component&#39;s custom tag will be 
+used as a placeholder only, and will be removed at rendering stage. </p>
+<h3 id="8-enhanced-list-rendering">8. Enhanced list rendering</h3>
+<p>Built-in list rendering is now support any kind of reactive web-components, not the Symbiote-components
+only. That helps to achieve maximum performance in that cases, when it is very important, for 
+example, in big dynamic tables. Here is an example:</p>
+<pre><code class="language-js"><span class="hljs-comment">// Create lightweight web-component for each table row:</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">TableRow</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">HTMLElement</span> {
+
+  <span class="hljs-keyword">set</span> <span class="hljs-title function_">rowData</span>(<span class="hljs-params">data</span>) {
+    data.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">cellContent, idx</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">children</span>[idx]) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">appendChild</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;td&#x27;</span>));
+      }
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">children</span>[idx].<span class="hljs-property">textContent</span> = cellContent;
+    });
+  }
+
+}
+
+<span class="hljs-variable language_">window</span>.<span class="hljs-property">customElements</span>.<span class="hljs-title function_">define</span>(<span class="hljs-string">&#x27;table-row&#x27;</span>, <span class="hljs-title class_">TableRow</span>);
+
+<span class="hljs-comment">// Than render big dynamic table with Symbiote:</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTable</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {
+
+  init$ = {
+    <span class="hljs-attr">tableData</span>: [],
+  }
+
+  <span class="hljs-title function_">initCallback</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">window</span>.<span class="hljs-built_in">setInterval</span>(<span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">let</span> data = [];
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) {
+        <span class="hljs-keyword">let</span> rowData = [
+          i + <span class="hljs-number">1</span>,
+          <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>(),
+        ];
+        
+        data.<span class="hljs-title function_">push</span>({rowData});
+      }
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">$</span>.<span class="hljs-property">tableData</span> = data;
+      
+    }, <span class="hljs-number">1000</span>);
+  }
+
+}
+
+<span class="hljs-title class_">MyTable</span>.<span class="hljs-property">rootStyles</span> = css`<span class="language-css">
+  <span class="hljs-selector-tag">table</span>-row {
+    <span class="hljs-attribute">display</span>: table-row;
+  }
+  <span class="hljs-selector-tag">td</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid currentColor;
+  }
+`</span>;
+
+<span class="hljs-title class_">MyTable</span>.<span class="hljs-property">template</span> = html`<span class="language-xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello table!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">table</span> </span></span><span class="hljs-subst">${{itemize: <span class="hljs-string">&#x27;tableData&#x27;</span>, <span class="hljs-string">&#x27;item-tag&#x27;</span>: <span class="hljs-string">&#x27;table-row&#x27;</span>}}</span><span class="language-xml"><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+`</span>;
+
+<span class="hljs-title class_">MyTable</span>.<span class="hljs-title function_">reg</span>(<span class="hljs-string">&#x27;my-table&#x27;</span>);
+</code></pre>
+<p>In this example we made a performant dynamic table of 20000 reactive cells.</p>
+<h3 id="9-alternative-binding-syntax-is-removed">9. Alternative binding syntax is removed</h3>
+<p>We&#39;ve removed the alternative binding description support because it required an excess 
+property name transformations, which are not obvious for the developers sometimes. </p>
+<p>This is not working anymore:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">set</span> <span class="hljs-attr">-onclick</span>=<span class="hljs-string">&quot;onButtonClicked&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>Use the new tag function helper instead:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> ${{<span class="hljs-attr">onclick:</span> &#x27;<span class="hljs-attr">onButtonClicked</span>&#x27;}}&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<h3 id="10-runtime-type-warnings-for-the-state-properties">10. Runtime type warnings for the state properties</h3>
+<p>Browser runtime is the most reliable source of information about what happens in your code.
+So, in addition to static code analysis, we use runtime type checks to prevent issues in some 
+complicated cases. Now, if you accidentally change the type of your state property or initiate
+your property with a wrong type, you will be warn about that.</p>
+<h3 id="11-build-and-type-definitions">11. Build and type definitions</h3>
+<p>Bundled code and single type definitions endpoint are not provided as a part of package anymore.
+We build our library that way, what allows to simplify build process in your development environment
+or to use code CDNs to use any module as build endpoint. 
+That is much more flexible and modern approach.</p>
+<h3 id="12-entity-renames">12. Entity renames</h3>
+<p>We&#39;ve renamed some API entities according to developers feedback.</p>
+<blockquote>
+<p>The major rename is that <code>BaseComponent</code> class is now <code>Symbiote</code>.</p>
+</blockquote>
+<p>Raw HTML template changes (if don&#39;t use &quot;html&quot; tag):</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">set</span>=<span class="hljs-string">&quot;textContent: textVariableName&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+→ now it becomes →
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">bind</span>=<span class="hljs-string">&quot;textContent: textVariableName&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">ctx-name</span>=<span class="hljs-string">&quot;my_data_ctx&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span>
+or
+<span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;--ctx-name: &#x27;my_data_ctx&#x27;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span>
+
+→ now it becomes →
+
+<span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">ctx</span>=<span class="hljs-string">&quot;my_data_ctx&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span>
+or
+<span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;--ctx: &#x27;my_data_ctx&#x27;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span>
+</code></pre>
+<p>Dynamic list:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">repeat</span>=<span class="hljs-string">&quot;data&quot;</span> <span class="hljs-attr">repeat-item-tag</span>=<span class="hljs-string">&quot;list-item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+→ now it becomes →
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">itemize</span>=<span class="hljs-string">&quot;data&quot;</span> <span class="hljs-attr">item-tag</span>=<span class="hljs-string">&quot;list-item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+or 
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> ${{<span class="hljs-attr">itemize:</span> &#x27;<span class="hljs-attr">data</span>&#x27;, &#x27;<span class="hljs-attr">item-tag</span>&#x27;<span class="hljs-attr">:</span> &#x27;<span class="hljs-attr">list-item</span>&#x27;}}&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<h3 id="13-light-dom-slots-support-is-removed-by-default">13. Light DOM slots support is removed by default</h3>
+<p>Light DOM slots support is removed from the default template processing pipeline. Now, if 
+you need to use slots without Shadow DOM, you need to connect <code>slotProcessor</code> manually:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Symbiote</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@in-wave/symbiote&#x27;</span>;
+<span class="hljs-keyword">import</span> { slotProcessor } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@in-wave/symbiote/core/slotProcessor.js&#x27;</span>;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">super</span>();
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">addTemplateProcessor</span>(slotProcessor);
+  }
+}
+</code></pre>
+<p>The reason is that this function can trigger unexpected lifecycle callbacks in the nested 
+DOM structure and should be used with attention to that.</p>
+<p>For the most cases, when slots are necessary, use components with a Shadow DOM mode enabled.</p>
+<h3 id="14-ssr-mode">14. SSR Mode</h3>
+<p>Symbiote.js is very easy to use with SSR:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Symbiote</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@in-wave/symbiote&#x27;</span>;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {
+  ssrMode = <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<p>Now you can create the markup for your components on the server and connect it to the Symbiote.js 
+state just with a one simple flag - <code>ssrMode</code>.</p>
+<h3 id="15-attribute-to-property-binding-token">15. Attribute-to-property binding token</h3>
+<p>Now yo can use the <code>@</code> token not for the one-way property-to-attribute binding only, but 
+for the attribute dependent property initiation itself:</p>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {
+  init$ = {
+    <span class="hljs-string">&#x27;@my-attribute&#x27;</span>: <span class="hljs-string">&#x27;some initial value...&#x27;</span>,
+  }
+}
+
+<span class="hljs-comment">// or use the direct template initiation:</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MyOtherComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {}
+
+<span class="hljs-title class_">MyOtherComponent</span>.<span class="hljs-property">template</span> = html`<span class="language-xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{@my-attribute}}<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+`</span>;
+</code></pre>
+<h3 id="16-template-properties-initialization-flag">16. Template properties initialization flag</h3>
+<p><code>allowTemplateInits</code> flag in now allows to initiate properties from the templates directly.</p>
+<p>Example:</p>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {
+
+  <span class="hljs-title function_">initCallback</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// Property is already exists:</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$</span>.<span class="hljs-property">myProp</span> = <span class="hljs-string">&#x27;new value&#x27;</span>;
+  } 
+
+}
+
+<span class="hljs-title class_">MyComponent</span>.<span class="hljs-property">template</span> = html`<span class="language-xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{myProp}}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+`</span>;
+</code></pre>
+<p>The default <code>allowTemplateInits</code> value is <code>true</code>.</p>
+</section-inner>
+</section>
+
+<section id="philosophy">
+  <div close-panel><a href="#home" close>Close [x]</a></div>
+  <section-inner clr-5><h2 id="philosophy">Philosophy</h2>
+<blockquote>
+<p>Unlike many other frontend libraries and frameworks, <strong>Symbiote.js</strong> is designed as a <strong>DOM API higher level extension</strong>, 
+not an independent external abstraction. And this is a main idea. <br /><br />We are not inventing the wheel or to reinvent
+the web platform, we evolve principles, that already existing as the native Web Platform features, and have proved their efficiency. 
+We don&#39;t create the new runtimes, new compilers or the new language syntax. We just adding features to the existing 
+modern DOM API to make your DX better.</p>
+</blockquote>
+<ul>
+<li><p><strong>Symbiote.js</strong> encourages the <a href="https://en.wikipedia.org/wiki/Loose_coupling">loosely coupled architecture</a> and abstraction, 
+allowing the creation of highly flexible and easily extensible solutions.</p>
+</li>
+<li><p><strong>Symbiote.js</strong> is built upon a modern web platform features and utilize native browser APIs
+instead of using an excess abstractions. Symbiote.js - is what you get after Occam&#39;s razor
+done it&#39;s work.</p>
+</li>
+<li><p><strong>Symbiote.js</strong> is agnostic. It works in browser and that means it works with any other technology
+that interacts with browser APIs. It makes it useful for manage complex interactions between 
+multiple system parts without a pain. It makes Symbiote the best choice for building embedded
+solutions and to build integration products.</p>
+</li>
+<li><p><strong>Symbiote.js</strong> is minimal, but has everything you need. You don&#39;t need to search and install
+more and more libraries for the data management, table rendering, component styling, dynamic application 
+localization or many of other common purposes. You have everything you need out of the box, because 
+browser have. We just make your work more convenient.</p>
+</li>
+<li><p><strong>Symbiote.js</strong> doesn&#39;t hide platform APIs behind opaque abstraction levels. You have an access to
+everything you see as the result of component rendering.</p>
+</li>
+<li><p><strong>Symbiote.js</strong> is extensible. You can extend your base component class to feat your needs. You can 
+add your own features. You can integrate your application APIs into the base class with ease. </p>
+</li>
+<li><p><strong>Symbiote.js</strong> is friendly for the new kind of dependency sharing. It&#39;s easy to share common code among
+the different subsystems (micro-frontends, widgets, meta-applications).</p>
+</li>
+</ul>
+<blockquote>
+<p>We believe that simple things should stay simple and all the complications should fit to their purposes. </p>
+</blockquote>
+</section-inner>
+</section>
+
+<section id="live">
+  <div close-panel><a href="#home" close>Close [x]</a></div>
+  <section-inner clr-2><h2 id="live-example">Live example</h2>
+<p>This example contains two embedded Symbiote applications. </p>
+<h3 id="1-photo-360-player-7k">1. Photo-360 player (~7k)</h3>
+<p><ims-photo-spinner></ims-photo-spinner></p>
+<p>HTML code example:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ims-photo-spinner</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;DATA_JSON_URL&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ims-photo-spinner</span>&gt;</span>
+</code></pre>
+<h3 id="2-file-uploader-with-the-image-editor-built-in-55kb">2. File uploader with the image editor built in (~55kb)</h3>
+<p><lr-config
+  ctx-name="uploader"
+  pubkey="demopublickey"
+  max-local-file-size-bytes="100000000"
+  img-only="true"
+  source-list="local, url, camera, dropbox">
+</lr-config></p>
+<accent-block>
+  <lr-file-uploader-regular 
+    ctx-name="uploader"
+    css-src="./2x/css/uploader/index.css">
+  </lr-file-uploader-regular>
+</accent-block>
+
+<p><lr-data-output
+  ctx-name="uploader"
+  use-console
+  use-group
+  use-event>
+</lr-data-output></p>
+<p>HTML code example:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">lr-file-uploader-regular</span> <span class="hljs-attr">css-src</span>=<span class="hljs-string">&quot;./2x/css/uploader/index.css&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">lr-file-uploader-regular</span>&gt;</span>
+</code></pre>
+<p>These widgets are provided by different vendors, but they connected to the one common workflow. 
+Symbiote.js allows you to do it with ease and the high level of flexibility.</p>
+<p>You can try to upload your own animation sequence (frame images) to the <a href="https://uploadcare.com/">Uploadcare</a> CDN and see the result.</p>
+<blockquote>
+<p>Note, that files should have names applicable for proper sorting.</p>
+</blockquote>
+</section-inner>
+</section>
+
+<section id="playground">
+  <div close-panel><a href="#home" close>Close [x]</a></div>
+  <section-inner clr-4>
+    <h2>Basics</h2>
+    <ul>
+      <li><a href="./2x/playground/basic/" target="_blank">Basic example</a></li>
+      <li><a href="./2x/playground/tag-names/" target="_blank">Tag names</a></li>
+    </ul>
+
+    <h2>Templates</h2>
+    <ul>
+      <li><a href="./2x/playground/template/" target="_blank">Manual template rendering</a></li>
+      <li><a href="./2x/playground/template-processor/" target="_blank">Template processor (Custom styling)</a></li>
+      <li><a href="./2x/playground/external-template/" target="_blank">External template</a></li>
+    </ul>
+
+    <h2>Context</h2>
+    <ul>
+      <li><a href="./2x/playground/data-context/" target="_blank">Shared context</a></li>
+      <li><a href="./2x/playground/context-types/" target="_blank">Context types</a></li>
+      <li><a href="./2x/playground/css-data/" target="_blank">CSS Data</a></li>
+    </ul>
+
+    <h2>Lists</h2>
+    <ul>
+      <li><a href="./2x/playground/dynamic-list/" target="_blank">Dynamic list rendering (Reactive table)</a></li>
+      <li><a href="./2x/playground/list/" target="_blank">Alternative list rendering (TODO list)</a></li>
+      <li><a href="./2x/playground/nested-list/" target="_blank">Nested lists</a></li>
+      <li><a href="./2x/playground/custom-option/" target="_blank">Customized built-in element as a list item</a></li>
+    </ul>
+
+    <h2>Misc</h2>
+    <ul>
+      <li><a href="./2x/playground/l10n/" target="_blank">Localization</a></li>
+      <li><a href="./2x/playground/ssr-hydration/" target="_blank">SSR + hydration</a></li>
+      <li><a href="./2x/playground/icons/" target="_blank">Icons</a></li>
+      <li><a href="./2x/playground/icons-2/" target="_blank">Icons 2</a></li>
+      <li><a href="./2x/playground/wgt-routing/" target="_blank">Widget routing</a></li>
+      <!-- <li><a href="./2x/playground/ssr-css/" target="_blank">SSR + CSS Data</a></li> -->
+    </ul>
+  </section-inner>
+</section>
+
+<section id="biome">
+  <div close-panel><a href="#home" close>Close [x]</a></div>
+  <section-inner><h2 id="biome">Biome</h2>
+<p>Here we provide a set of the basic recommendations for the development environment setup.
+Note, that this is only recommendations, you can chose any other approach which is more
+relevant to your experience or needs.</p>
+<h3 id="1-template-syntax-highlight">1. Template syntax highlight</h3>
+<p>We use standard JavaScript template literals for the component&#39;s templates description.
+To highlight HTML inside template literals we use IDE extensions, that allows to identify
+such templates with tag functions or JavaScript comments. </p>
+<p>Example:</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> template = html`<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>MY_TEMPLATE<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>`</span>;
+
+<span class="hljs-keyword">let</span> styles = css`<span class="language-css">
+  <span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#f00</span>;
+  }
+`</span>;
+</code></pre>
+<h3 id="2-static-analysis-type-checking">2. Static analysis, type checking</h3>
+<p>We strongly recommend to use TypeScript static analysis in all your projects. </p>
+<p>We use JSDoc format and *.d.ts files for the types declarations.</p>
+<p>JSDoc annotation example:</p>
+<pre><code class="language-js"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> {<span class="hljs-type">Boolean</span>} <span class="hljs-variable">a</span>
+ * <span class="hljs-doctag">@param</span> {<span class="hljs-type">Number</span>} <span class="hljs-variable">b</span>
+ * <span class="hljs-doctag">@param</span> {<span class="hljs-type">String</span>} <span class="hljs-variable">c</span>
+ */</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params">a, b, c</span>) {
+  ...
+}
+</code></pre>
+<p>Check the details at <a href="https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html">https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html</a></p>
+<h3 id="3-building-and-minification">3. Building and minification</h3>
+<p><a href="https://esbuild.github.io/">Esbuild</a> - is our choice for the code bundling and minification.
+Esbuild is very performant and easy to configure solution that can prepare your JavaScript and
+CSS code for the distribution.</p>
+<h3 id="4-code-sharing">4. Code sharing</h3>
+<p>Network imports is a very powerful platform feature that helps to use the common code parts for the
+different functional endpoints in the big applications with ease. You don&#39;t need to setup complex
+build workflows to share the dependencies anymore.</p>
+<p>Example:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Symbiote</span>, html, css } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;https://esm.run/@in-wave/symbiote&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyAppComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Symbiote</span> {}
+
+<span class="hljs-keyword">export</span> { html, css }
+</code></pre>
+<h3 id="4-localdev-server">4. Local/dev server</h3>
+<p>Use any local server you like, that can serve static files. Symbiote.js is agnostic and it doesn&#39;t 
+require any special tool for ESM modules resolving or for the anything else. </p>
+<p>You can use the simple relative paths for your modules or <code>import-maps</code> for the 
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap">module path mapping</a>. </p>
+<p>This feature is <a href="https://caniuse.com/import-maps">supported in all modern browsers</a>.</p>
+</section-inner>
+</section>
+
+</body>
+</html>
