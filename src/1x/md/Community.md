@@ -1,7 +1,7 @@
 
 # Symbiote.js in social networks
 
-- [GitHub Discussions](https://github.com/symbiotejs/symbiote.js/discussions)
+- [GitHub Discussions](https://github.com/in-wave/symbiote/discussions)
 - [Reddit](https://www.reddit.com/r/symbiotejs/)
 - [Telegram](https://t.me/symbiotejs)
 - [Twitter](https://twitter.com/symbiotejs)

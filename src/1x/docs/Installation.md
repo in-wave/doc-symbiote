@@ -31,7 +31,7 @@ declare module 'https://esm.sh/@in-wave/symbiote/' {
 
 Initial submodule connection:
 
-`git submodule add -b main https://github.com/symbiotejs/symbiote.js.git ./symbiote`
+`git submodule add -b main https://github.com/in-wave/symbiote.git ./symbiote`
 
 Activation at the cloned host repository and getting updates: 
 

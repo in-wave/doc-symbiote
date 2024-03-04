@@ -1,7 +1,7 @@
 export default /*md*/ `
 ## Symbiote.js in social networks
 
-- [GitHub Discussions](https://github.com/symbiotejs/symbiote.js/discussions)
+- [GitHub Discussions](https://github.com/in-wave/symbiote/discussions)
 - [DEV.to](https://dev.to/symbiotejs)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/symbiote+or+symbiote.js)
 - [Reddit](https://www.reddit.com/r/symbiotejs/)

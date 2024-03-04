@@ -20,5 +20,5 @@ with your existing infrastructure.
 
 We can find and train the true ninja squad for you.
 
-> Contact us: [symbiote.js@gmail.com](mailto:symbiote.js@gmail.com)
+> Contact us: [wave@in-wave.com](mailto:wave@in-wave.com)
 `;

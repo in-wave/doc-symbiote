@@ -21,7 +21,7 @@ export const NAV = {
   },
   github: {
     menuItem: 'GitHub &rarr;',
-    link: 'https://github.com/symbiotejs/symbiote.js',
+    link: 'https://github.com/in-wave/symbiote',
   },
 };
 

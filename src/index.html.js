@@ -59,7 +59,7 @@ ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
     <card-el>Go to 1.x →</card-el>
   </a>
 
-  <a href="https://github.com/symbiotejs/symbiote.js" target="_blank">
+  <a href="https://github.com/in-wave/symbiote" target="_blank">
     <card-el clr-2>GitHub →</card-el>
   </a>
 

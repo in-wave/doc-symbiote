@@ -4,7 +4,7 @@ import footer from './footer.htm.js';
 import { md2html } from '../../../lib/processMarkdown.js';
 import CFG from '../../../project.cfg.js';
 
-let homeMd = await (await fetch('https://raw.githubusercontent.com/symbiotejs/symbiote.js/main/README.md')).text();
+let homeMd = await (await fetch('https://raw.githubusercontent.com/in-wave/symbiote/wave/README.md')).text();
 let homeHtml = await md2html(homeMd);
 let exampleAppPath = `https://esm.sh/@uploadcare/blocks@${CFG.uploaderExampleVersion}/solutions/file-uploader/regular/?bundle`;
 let exampleAppCssPath = './css/uploader/index.css';

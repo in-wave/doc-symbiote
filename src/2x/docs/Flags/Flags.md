@@ -41,7 +41,7 @@ class MyComponent extends Symbiote {
 }
 ```
 
-Live example: https://symbiotejs.org/2x/playground/ssr-hydration/
+Live example: https://symbiote.in-wave.com/2x/playground/ssr-hydration/
 
 ### isVirtual
 
