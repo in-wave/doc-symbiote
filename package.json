@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "copy-examples": "cp -r ./examples/ ./dist/examples/",
-    "build": "node ./build.js && npm run copy-examples",
+    "copy-lives": "cp -r ./lives/ ./dist/lives/",
+    "build": "node ./build.js && npm run copy-lives",
     "dev": "node ./watch.js"
   },
   "dependencies": {

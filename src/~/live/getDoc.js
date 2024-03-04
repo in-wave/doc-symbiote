@@ -9,9 +9,9 @@ import { applyData } from '@jam-do/jam-tools/iso/applyData.js';
 export function getDoc(data) {
   let pageContent = /*html*/ `
     <live-code
-      html="../examples/${data.folder}/index.html"
-      js="../examples/${data.folder}/index.js"
-      css="../examples/${data.folder}/index.css">
+      html="../lives/${data.folder}/index.html"
+      js="../lives/${data.folder}/index.js"
+      css="../lives/${data.folder}/index.css">
     </live-code>
   `;
 
