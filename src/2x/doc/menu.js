@@ -24,7 +24,7 @@ export default function menu(menuItem) {
 <nav>
   <a href="./"><div logo>${logo(90)}</div></a>
   ${items.map((fName) => {
-    return /*html*/ `<a ${fName === menuItem ? 'current ': ''}sub href="./2x/docs/${fName.replaceAll(' ', '_')}/">${fName}</a>`;
+    return /*html*/ `<a ${fName === menuItem ? 'current ': ''}sub href="./2x/doc/${fName.replaceAll(' ', '_')}/">${fName}</a>`;
   }).join('')}
 </nav>
   `;
