@@ -7,7 +7,7 @@ export default /*html*/ `
 ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
 <body>
   <card-el clr-1 logo>
-    <img src="./svg/logo/index.svg" alt="Symbiote.js">
+    <img src="./svg/logo/index.svg" alt="Symbiote.js logo">
   </card-el>
 
   <a href="#new">
@@ -19,7 +19,7 @@ ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
     </card-el>
   </a>
 
-  <a href="./2x/docs/Get_started/">
+  <a href="./2x/docs/get_started/">
     <card-el clr-2>Docs</card-el>
   </a>
 
