@@ -31,8 +31,8 @@ ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
     <card-el double clr-2>Live example</card-el>
   </a>
   
-  <a href="#live">
-    <card-el clr-4>Playground</card-el>
+  <a href="#lives">
+    <card-el clr-4>Live coding</card-el>
   </a>
 
   <a href="#biome">
