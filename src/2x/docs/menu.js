@@ -1,19 +1,17 @@
 import logo from '../../svg/logo/index.svg.js';
 
 let items = [
-  'Get started',
-  'Templates',
-  'Properties',
-  'Context',
-  'List items',
-  'Flags',
-  'Lifecycle',
-  'Attributes',
-  'PubSub',
-  'Styling',
-  'Routing',
-  // 'Types',
-  // 'Tips & Tricks',
+  'get started',
+  'templates',
+  'properties',
+  'context',
+  'list items',
+  'flags',
+  'lifecycle',
+  'attributes',
+  'pubSub',
+  'styling',
+  'routing'
 ];
 
 /**

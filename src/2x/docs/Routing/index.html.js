@@ -2,6 +2,6 @@ import { docPage } from '../docPage.js';
 
 import fs from 'fs';
 
-let md = fs.readFileSync('./src/2x/docs/Routing/Routing.md').toString();
+let md = fs.readFileSync('./src/2x/docs/routing/routing.md').toString();
 
-export default await docPage(md, 'Routing')
+export default await docPage(md, 'routing')
