@@ -1,4 +1,4 @@
-import tpl from '../tpl/playground.htm.js';
+import tpl from '../tpl/live.htm.js';
 import head from '../tpl/head.htm.js';
 import { applyData } from '@jam-do/jam-tools/iso/applyData.js';
 
