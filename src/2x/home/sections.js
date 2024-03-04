@@ -18,7 +18,7 @@ export default /*html*/ `
   <section-inner clr-2>${await md('../src/2x/md/live.md.js')}</section-inner>
 </section>
 
-<section id="live">
+<section id="lives">
   ${closeBtn}
   <section-inner clr-4>
     <h2>Basics</h2>
