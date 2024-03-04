@@ -7,18 +7,18 @@ export const NAV = {
     menuItem: 'Docs',
     link: 'docs/Installation.html',
   },
-  cookbook: {
-    menuItem: 'Cookbook',
-    link: 'cookbook/',
-  },
+  // cookbook: {
+  //   menuItem: 'Cookbook',
+  //   link: 'cookbook/',
+  // },
   // pulse: {
   //   menuItem: 'Pulse',
   //   link: 'pulse/',
   // },
-  community: {
-    menuItem: 'Community',
-    link: 'community/',
-  },
+  // community: {
+  //   menuItem: 'Community',
+  //   link: 'community/',
+  // },
   github: {
     menuItem: 'GitHub &rarr;',
     link: 'https://github.com/in-wave/symbiote',
